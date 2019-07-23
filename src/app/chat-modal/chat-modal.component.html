@@ -1,0 +1,57 @@
+<a class="link" (click)="showModal()">Чат</a>
+
+<div *ngIf="stateActive" id="openModal" class="modal-container" (click)="hideModal()">
+    <div class="modal-window" (click)="$event.stopPropagation()">
+        <div class="modal-content">
+            <div class="modal-left-column">
+                <div class="modal-header">
+                    <div class="modal-title">Бизнес-чат</div>
+                    <a class="link close-cross" (click)="hideModal()">×</a>                    
+                </div>
+                <div class="column-title">Продукты</div>
+                <div *ngFor="let group of groups" [class.active]="group.id == this.groupId" class="group-block pointer" (click)="selectGroup(group.id)">
+                    <div>{{ group.title }}</div>
+                    <div>{{ group.org }}</div>
+                    <fa-icon [icon]="['fas', 'comment-alt']"></fa-icon>
+                    <fa-icon [icon]="['fas', 'exclamation-triangle']"></fa-icon>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                    <div *ngFor="let post of posts">
+                        <div class="post" [class.post-sended]="post.selfMsg" [class.post-received]="!post.selfMsg">
+                            <div class="post-signature">{{ getSignature(post) }}</div>
+                            <div class="post-time">{{ formatTime(post) }}</div>
+                            <div class="post-text">{{ post.text }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body-bottom">
+                    <div class="modal-body-edit">
+                        <textarea rows="2" (keyup.enter)="postMessage()" placeholder="Введите текст сообщения..." [(ngModel)]="newMessage"></textarea>
+                    </div>
+                    <div class="modal-body-controls">
+                        <div class="modal-body-control control-link">
+                            <fa-icon [icon]="['fas', 'paperclip']"></fa-icon>
+                            Загрузить файл
+                        </div>
+                        <div class="modal-body-control control-link">
+                            <fa-icon [icon]="['far', 'file']"></fa-icon>
+                            Создать запрос
+                        </div>
+                        <div class="modal-body-control control-link">
+                            <fa-icon [icon]="['fas', 'signature']"></fa-icon>
+                            Запустить подписание договора
+                        </div>
+                        <div class="modal-body-control push button" 
+                            (click)="postMessage()"
+                            [class.disabled]="newMessage==''">
+                            Отправить
+                            <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

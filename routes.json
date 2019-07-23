@@ -1,0 +1,4 @@
+{
+    "/api/chat/group/:groupId": "/posts?groupId=:groupId",
+    "/api/chat/group/:groupId/send": "/posts"
+}
