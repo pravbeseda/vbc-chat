@@ -99,6 +99,9 @@ $main_text_color: #616c82;
                 background-color: $modal_background_active;
                 height: 100%;
                 overflow-y: auto;
+                .post-date {
+                    clear: both;
+                }
                 .post {
                     padding: 10px;
                     margin: 10px 20px;

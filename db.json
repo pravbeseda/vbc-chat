@@ -146,6 +146,18 @@
       },
       "dateTimeCreate": "2019-07-22T20:36:12+03:00",
       "id": 14
+    },
+    {
+      "selfMsg": true,
+      "text": "новое\n",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T10:33:31+03:00",
+      "id": 15
     }
   ]
 }

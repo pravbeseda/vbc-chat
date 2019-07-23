@@ -18,13 +18,16 @@
             </div>
             <div class="modal-body">
                 <div class="modal-body-messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-                    <div *ngFor="let post of posts">
+                    <ng-container *ngFor="let post of posts; let i = index">
+                        <div *ngIf="i == 0 || formatDate(post) != formatDate(posts[i-1])" class="post-date">
+                            {{ formatDate(post) }}
+                        </div>
                         <div class="post" [class.post-sended]="post.selfMsg" [class.post-received]="!post.selfMsg">
                             <div class="post-signature">{{ getSignature(post) }}</div>
                             <div class="post-time">{{ formatTime(post) }}</div>
                             <div class="post-text">{{ post.text }}</div>
                         </div>
-                    </div>
+                    </ng-container>
                 </div>
                 <div class="modal-body-bottom">
                     <div class="modal-body-edit">

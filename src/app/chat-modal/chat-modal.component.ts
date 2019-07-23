@@ -95,6 +95,10 @@ export class ChatModalComponent implements OnInit {
 
   formatTime(post: Post): string {
     return (post && post.dateTimeCreate) ? moment(post.dateTimeCreate).format('HH:mm') : '';  
-  } 
-
+  }
+  
+  formatDate(post: Post): string {
+    return (post && post.dateTimeCreate) ? moment(post.dateTimeCreate).format('ll') : '';  
+  }
+    
 }
