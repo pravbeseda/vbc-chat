@@ -1,9 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h2>
-    {{ title }}
-  </h2>
+  <h2> {{ title }} </h2>
   <app-chat-modal></app-chat-modal>
+  <div class="error" *ngIf='this.errorDB'> Не забудьте запустить БД: npm run json-server </div>
 </div>
 
 <router-outlet></router-outlet>

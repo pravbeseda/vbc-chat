@@ -4,6 +4,7 @@ import { ChatService } from '../chat.service';
 import { Post } from '../post';
 import { Sender } from '../sender';
 import { Group } from '../group';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-chat-modal',
@@ -53,7 +54,7 @@ export class ChatModalComponent implements OnInit {
           this.selectGroup(this.groupId || this.groups[0].id)
         }    
         console.log('getGroups', this.groups);
-      }
+      }, (err: HttpErrorResponse) => { this.handleHttpError(err); }
     );
   }
 
@@ -63,7 +64,7 @@ export class ChatModalComponent implements OnInit {
         this.posts = posts;
         this.scrollBottom();
         console.log('getPosts', this.posts);
-      }
+      }, (err: HttpErrorResponse) => { this.handleHttpError(err); }
     );
   }
 
@@ -81,8 +82,8 @@ export class ChatModalComponent implements OnInit {
       group.postsCount = this.posts.length;
       this.scrollBottom();
       this.chatService.updateGroup(group).subscribe(() => {
-      });      
-    });
+      }, (err: HttpErrorResponse) => { this.handleHttpError(err); });      
+    }, (err: HttpErrorResponse) => { this.handleHttpError(err); });
     this.newMessage = '';
   }
 
@@ -117,6 +118,9 @@ export class ChatModalComponent implements OnInit {
   scrollBottom() {
     setTimeout(() => this.scrolltop = this.postsEl.nativeElement.scrollHeight, 0);
   }
-  
+
+  private handleHttpError (error: HttpErrorResponse) {
+    console.error('ChatService::handleError', error.message);
+  }    
     
 }

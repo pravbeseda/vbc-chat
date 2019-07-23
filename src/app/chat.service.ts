@@ -22,16 +22,12 @@ export class ChatService {
   // GET: /api/chat/group/{groupId}
   public getPosts(groupId: number): Observable<Post[]> {
     return this.http.get<Post[]>(API_URL + '/api/chat/group/' + groupId)
-      //.catch(this.handleError);
   }
 
   // POST: /api/chat/group/{groupId}/send
   public newPost(post: Post): Observable<Post> {
     let url = API_URL + '/api/chat/group/' + post.groupId + '/send';
-    console.log('ChatService.newPost', post.text, url);
-    return this.http.post<Post>(url, post, this.httpOptions).pipe(
-      //catchError(this.handleError('newPost', post))
-    );
+    return this.http.post<Post>(url, post, this.httpOptions);
   }
 
   public getGroups(): Observable<Group[]> {
@@ -39,13 +35,7 @@ export class ChatService {
   }
 
   public updateGroup(group: Group): Observable<Group> {
-    console.log('updateGroup', group);
     return this.http.put<Group>(API_URL + '/groups/' + group.id, group, this.httpOptions);
   }
-
-  private handleError (error: Response | any) {
-    console.error('ChatService::handleError', error);
-    return Observable.throw(error);
-  }  
 
 }
