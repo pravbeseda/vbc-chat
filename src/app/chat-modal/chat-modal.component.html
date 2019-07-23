@@ -11,13 +11,16 @@
                 <div class="column-title">Продукты</div>
                 <div *ngFor="let group of groups" [class.active]="group.id == this.groupId" class="group-block pointer" (click)="selectGroup(group.id)">
                     <div>{{ group.title }}</div>
-                    <div>{{ group.org }}</div>
-                    <fa-icon [icon]="['fas', 'comment-alt']"></fa-icon>
-                    <fa-icon [icon]="['fas', 'exclamation-triangle']"></fa-icon>
+                    <div>{{ formatGroupTime(group) }}</div>
+                    <div><fa-icon [icon]="['fas', 'arrow-right']"></fa-icon> {{ group.org }}</div>
+                    <ng-container *ngIf='group.postsCount > 0'>
+                        <fa-icon [icon]="['fas', 'comment-alt']"></fa-icon> <span>{{ group.postsCount }}</span>
+                    </ng-container>
+                    <!--fa-icon [icon]="['fas', 'exclamation-triangle']"></fa-icon -->
                 </div>
             </div>
             <div class="modal-body">
-                <div class="modal-body-messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                <div class="modal-body-messages" #postsEl [scrollTop]="scrolltop">
                     <ng-container *ngFor="let post of posts; let i = index">
                         <div *ngIf="i == 0 || formatDate(post) != formatDate(posts[i-1])" class="post-date">
                             {{ formatDate(post) }}

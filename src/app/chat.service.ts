@@ -38,6 +38,11 @@ export class ChatService {
     return this.http.get<Group[]>(API_URL + '/groups')
   }
 
+  public updateGroup(group: Group): Observable<Group> {
+    console.log('updateGroup', group);
+    return this.http.put<Group>(API_URL + '/groups/' + group.id, group, this.httpOptions);
+  }
+
   private handleError (error: Response | any) {
     console.error('ChatService::handleError', error);
     return Observable.throw(error);

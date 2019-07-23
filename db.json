@@ -3,12 +3,16 @@
     {
       "id": 1,
       "title": "БГ(№345678)",
-      "org": "Маркетплейс ВБЦ"
+      "org": "Маркетплейс ВБЦ",
+      "lastPostDate": "2019-07-23T14:15:50+03:00",
+      "postsCount": 26
     },
     {
       "id": 2,
-      "title": "БГ(№394857)",
-      "org": "Маркетплейс ВБЦ"
+      "title": "БГ(№384756)",
+      "org": "Маркетплейс ВБЦ",
+      "lastPostDate": "2019-07-23T14:17:29+03:00",
+      "postsCount": 12
     }
   ],
   "posts": [
@@ -158,6 +162,282 @@
       },
       "dateTimeCreate": "2019-07-23T10:33:31+03:00",
       "id": 15
+    },
+    {
+      "selfMsg": true,
+      "text": "ау",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T11:54:13+03:00",
+      "id": 16
+    },
+    {
+      "selfMsg": true,
+      "text": "55",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T12:02:49+03:00",
+      "id": 17
+    },
+    {
+      "selfMsg": true,
+      "text": "11",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T12:04:11+03:00",
+      "id": 18
+    },
+    {
+      "selfMsg": true,
+      "text": "77",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T12:04:48+03:00",
+      "id": 19
+    },
+    {
+      "selfMsg": true,
+      "text": "99",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T12:04:53+03:00",
+      "id": 20
+    },
+    {
+      "selfMsg": true,
+      "text": "лл",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T12:06:15+03:00",
+      "id": 21
+    },
+    {
+      "selfMsg": true,
+      "text": "77",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T12:55:02+03:00",
+      "id": 22
+    },
+    {
+      "selfMsg": true,
+      "text": "99",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T12:58:48+03:00",
+      "id": 23
+    },
+    {
+      "selfMsg": true,
+      "text": "00\n",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:02:13+03:00",
+      "id": 24
+    },
+    {
+      "selfMsg": true,
+      "text": "00\n",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:04:24+03:00",
+      "id": 25
+    },
+    {
+      "selfMsg": true,
+      "text": "111\n",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:04:31+03:00",
+      "id": 26
+    },
+    {
+      "selfMsg": true,
+      "text": "qqq\n",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:05:25+03:00",
+      "id": 27
+    },
+    {
+      "selfMsg": true,
+      "text": "--\n",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:05:46+03:00",
+      "id": 28
+    },
+    {
+      "selfMsg": true,
+      "text": "rr\n",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:06:19+03:00",
+      "id": 29
+    },
+    {
+      "selfMsg": true,
+      "text": "ooo\n",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:06:51+03:00",
+      "id": 30
+    },
+    {
+      "selfMsg": true,
+      "text": "444",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:51:14+03:00",
+      "id": 31
+    },
+    {
+      "selfMsg": true,
+      "text": "22\n",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:52:04+03:00",
+      "id": 32
+    },
+    {
+      "selfMsg": true,
+      "text": "dddddddddddd",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T13:52:47+03:00",
+      "id": 33
+    },
+    {
+      "selfMsg": true,
+      "text": "ss",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T14:00:16+03:00",
+      "id": 34
+    },
+    {
+      "selfMsg": true,
+      "text": "88",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T14:00:25+03:00",
+      "id": 35
+    },
+    {
+      "selfMsg": true,
+      "text": "ii\n",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T14:15:50+03:00",
+      "id": 36
+    },
+    {
+      "selfMsg": true,
+      "text": "00\n",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T14:17:26+03:00",
+      "id": 37
+    },
+    {
+      "selfMsg": true,
+      "text": "11\n",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-23T14:17:29+03:00",
+      "id": 38
     }
   ]
 }
