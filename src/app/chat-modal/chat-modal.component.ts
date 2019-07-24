@@ -13,6 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   providers: [ChatService]
 })
 export class ChatModalComponent implements OnInit {
+  @ViewChild('postsEl', null) postsEl: ElementRef;
   stateActive = false;  
   newMessage = '';
   groupId: number;
@@ -22,9 +23,9 @@ export class ChatModalComponent implements OnInit {
     name: 'Иванов Петр Сергеевич',
     position: 'Менеджер',
     orgName: 'ООО ВБЦ'
-  }
-  @ViewChild('postsEl', null) postsEl: ElementRef;  
+  }  
   scrolltop: number = null;
+  errorDB = false;
   
   constructor(private chatService: ChatService) { }
 
@@ -53,7 +54,7 @@ export class ChatModalComponent implements OnInit {
         if (this.groups.length > 0) {
           this.selectGroup(this.groupId || this.groups[0].id)
         }    
-        console.log('getGroups', this.groups);
+        this.errorDB = false;
       }, (err: HttpErrorResponse) => { this.handleHttpError(err); }
     );
   }
@@ -63,7 +64,7 @@ export class ChatModalComponent implements OnInit {
       (posts) => {
         this.posts = posts;
         this.scrollBottom();
-        console.log('getPosts', this.posts);
+        this.errorDB = false;
       }, (err: HttpErrorResponse) => { this.handleHttpError(err); }
     );
   }
@@ -82,6 +83,7 @@ export class ChatModalComponent implements OnInit {
       group.postsCount = this.posts.length;
       this.scrollBottom();
       this.chatService.updateGroup(group).subscribe(() => {
+        this.errorDB = false;
       }, (err: HttpErrorResponse) => { this.handleHttpError(err); });      
     }, (err: HttpErrorResponse) => { this.handleHttpError(err); });
     this.newMessage = '';
@@ -121,6 +123,7 @@ export class ChatModalComponent implements OnInit {
 
   private handleHttpError (error: HttpErrorResponse) {
     console.error('ChatService::handleError', error.message);
+    this.errorDB = true;
   }    
     
 }
