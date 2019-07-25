@@ -4,15 +4,15 @@
       "id": 1,
       "title": "БГ(№345678)",
       "org": "Маркетплейс ВБЦ",
-      "lastPostDate": "2019-07-23T14:15:50+03:00",
-      "postsCount": 26
+      "lastPostDate": "2019-07-24T18:36:56+03:00",
+      "postsCount": 27
     },
     {
       "id": 2,
       "title": "БГ(№384756)",
       "org": "Маркетплейс ВБЦ",
-      "lastPostDate": "2019-07-23T14:17:29+03:00",
-      "postsCount": 12
+      "lastPostDate": "2019-07-24T18:36:23+03:00",
+      "postsCount": 15
     }
   ],
   "posts": [
@@ -438,6 +438,54 @@
       },
       "dateTimeCreate": "2019-07-23T14:17:29+03:00",
       "id": 38
+    },
+    {
+      "selfMsg": true,
+      "text": "uu",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-24T18:36:18+03:00",
+      "id": 39
+    },
+    {
+      "selfMsg": true,
+      "text": "u",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-24T18:36:20+03:00",
+      "id": 40
+    },
+    {
+      "selfMsg": true,
+      "text": "uu",
+      "groupId": 2,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-24T18:36:23+03:00",
+      "id": 41
+    },
+    {
+      "selfMsg": true,
+      "text": "[[[",
+      "groupId": 1,
+      "sender": {
+        "name": "Иванов Петр Сергеевич",
+        "position": "Менеджер",
+        "orgName": "ООО ВБЦ"
+      },
+      "dateTimeCreate": "2019-07-24T18:36:56+03:00",
+      "id": 42
     }
   ]
 }
