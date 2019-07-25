@@ -9,9 +9,10 @@ $post_received_color: #fff;
 $main_text_color: #616c82;
 $message_text_color: black;
 $post_date_color: #999;
-$black_text: black;
-$gray_text: #b7becb;
+$group_org_color: black;
+$group_arrow_color: #b7becb;
 $icon_color: #acb5c3;
+$button_disabled_text_color: #999;
 $counter_background: #e8eaf1;
 
 .modal-container {
@@ -113,11 +114,11 @@ $counter_background: #e8eaf1;
 
                 .group-org {
                     .group-arrow {
-                        color: $gray_text;
+                        color: $group_arrow_color;
                         font-size: 0.8em
                     }
                     .group-org-name {
-                        color: $black_text;
+                        color: $group_org_color;
                         margin-left: 8px;
                     }
                 }
@@ -194,9 +195,10 @@ $counter_background: #e8eaf1;
                     .post {
                         padding: 15px;
                         margin: 10px 0;
+                        white-space: pre-wrap;
                         max-width: 75%;
                         font-size: .9em;                        
-                        clear: both;
+                        clear: both;                        
 
                         .post-signature {                            
                             float: left;
@@ -239,6 +241,7 @@ $counter_background: #e8eaf1;
                         width: 100%;
                         padding: 10px;
                         font-size: 0.9em;
+                        border: none;
                     }
                 }
 
@@ -288,6 +291,7 @@ $counter_background: #e8eaf1;
     cursor: none;
     box-shadow: none;
     pointer-events: none;
+    color: $button_disabled_text_color;
 }
 
 .push {

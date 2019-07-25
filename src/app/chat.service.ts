@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from './../environments/environment';
-import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent } from 'rxjs';
-import { map, filter, scan } from 'rxjs/operators';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Post } from './post';
 import { Group } from './group';
 

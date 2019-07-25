@@ -26,7 +26,7 @@
                 <div class="modal-body-wrapper">
                     <div class="error-message" *ngIf='this.errorDB'> Необходимо запустить БД: npm run json-server </div>
                     <div class="modal-body-messages" *ngIf='!this.errorDB' #postsEl [scrollTop]="scrolltop">
-                        <ng-container *ngFor="let post of posts; let i = index">
+                        <ng-container *ngFor="let post of posts; let i = index; trackBy: trackPost">
                             <div *ngIf="i == 0 || formatDate(post) != formatDate(posts[i-1])" class="post-date">
                                 {{ formatDate(post) }}
                             </div>

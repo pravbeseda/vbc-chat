@@ -89,6 +89,10 @@ export class ChatModalComponent implements OnInit {
     this.newMessage = '';
   }
 
+  trackPost(index: number, element: Post) {
+    return element ? element.id : null;
+  }
+
   getSignature(post: Post): string {
     let signature: string[] = [];
     if (post.sender) {
