@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as moment from 'moment';
 import { ChatService } from '../chat.service';
-import { Post } from '../post';
-import { Sender } from '../sender';
-import { Group } from '../group';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Group, Post, Sender } from '../chat';
 
 @Component({
   selector: 'app-chat-modal',
@@ -14,19 +12,20 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ChatModalComponent implements OnInit {
   @ViewChild('postsEl', null) postsEl: ElementRef;
-  stateActive = false;  
+
+  stateActive = false;
   newMessage = '';
   groupId: number;
-  groups: Group[];  
+  groups: Group[];
   posts: Post[];
   sender: Sender = {
     name: 'Иванов Петр Сергеевич',
     position: 'Менеджер',
     orgName: 'ООО ВБЦ'
-  }  
-  scrolltop: number = null;
+  };
+  scrolltop: number;
   errorDB = false;
-  
+
   constructor(private chatService: ChatService) { }
 
   ngOnInit() {
@@ -35,7 +34,7 @@ export class ChatModalComponent implements OnInit {
 
   showModal() {
     this.stateActive = true;
-    this.readGroups();    
+    this.readGroups();
   }
 
   hideModal() {
@@ -52,8 +51,8 @@ export class ChatModalComponent implements OnInit {
       (groups) => {
         this.groups = groups;
         if (this.groups.length > 0) {
-          this.selectGroup(this.groupId || this.groups[0].id)
-        }    
+          this.selectGroup(this.groupId || this.groups[0].id);
+        }
         this.errorDB = false;
       }, (err: HttpErrorResponse) => { this.handleHttpError(err); }
     );
@@ -70,21 +69,22 @@ export class ChatModalComponent implements OnInit {
   }
 
   postMessage() {
-    let post = new Post();
-    post.text = this.newMessage;
-    post.groupId = this.groupId;
-    post.sender = this.sender;
-    post.selfMsg = true;
-    post.dateTimeCreate = moment().format();
+    const post: Post = {
+      text: this.newMessage,
+      groupId: this.groupId,
+      sender: this.sender,
+      selfMsg: true,
+      dateTimeCreate: moment().format()
+    };
     this.chatService.newPost(post).subscribe((p) => {
       this.posts.push(p);
-      let group = this.groups.filter(group => group.id == this.groupId)[0];
-      group.lastPostDate = p.dateTimeCreate;      
+      const group = this.groups.filter(g => g.id === this.groupId)[0];
+      group.lastPostDate = p.dateTimeCreate;
       group.postsCount = this.posts.length;
       this.scrollBottom();
       this.chatService.updateGroup(group).subscribe(() => {
         this.errorDB = false;
-      }, (err: HttpErrorResponse) => { this.handleHttpError(err); });      
+      }, (err: HttpErrorResponse) => { this.handleHttpError(err); });
     }, (err: HttpErrorResponse) => { this.handleHttpError(err); });
     this.newMessage = '';
   }
@@ -94,7 +94,7 @@ export class ChatModalComponent implements OnInit {
   }
 
   getSignature(post: Post): string {
-    let signature: string[] = [];
+    const signature: string[] = [];
     if (post.sender) {
       if (post.sender.orgName) {
         signature.push(post.sender.orgName);
@@ -110,11 +110,11 @@ export class ChatModalComponent implements OnInit {
   }
 
   formatTime(post: Post): string {
-    return (post && post.dateTimeCreate) ? moment(post.dateTimeCreate).format('HH:mm') : '';  
+    return (post && post.dateTimeCreate) ? moment(post.dateTimeCreate).format('HH:mm') : '';
   }
-  
+
   formatDate(post: Post): string {
-    return (post && post.dateTimeCreate) ? moment(post.dateTimeCreate).format('ll') : '';  
+    return (post && post.dateTimeCreate) ? moment(post.dateTimeCreate).format('ll') : '';
   }
 
   formatGroupTime(group: Group): string {
@@ -125,9 +125,9 @@ export class ChatModalComponent implements OnInit {
     setTimeout(() => this.scrolltop = this.postsEl.nativeElement.scrollHeight, 0);
   }
 
-  private handleHttpError (error: HttpErrorResponse) {
+  private handleHttpError(error: HttpErrorResponse) {
     console.error('ChatService::handleError', error.message);
     this.errorDB = true;
-  }    
-    
+  }
+
 }
